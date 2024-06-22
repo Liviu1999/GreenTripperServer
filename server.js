@@ -13,11 +13,11 @@ const { Pool } = pg;
 dotenv.config();
 
 const pool = new Pool({
-  user: "uacfd6574l35oo",
-  host: "c9tiftt16dc3eo.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
-  database: "dfit4enc7fftph",
-  password: "pc6006872b995beea36cb03e8d41b5d15e4537aeff5ba41622c4d2ffdb94a1681",
-  port: 5433,
+  // user: "uacfd6574l35oo",
+  // host: "c9tiftt16dc3eo.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
+  // database: "dfit4enc7fftph",
+  // password: "pc6006872b995beea36cb03e8d41b5d15e4537aeff5ba41622c4d2ffdb94a1681",
+  // port: 5433,
 
   // host: process.env.PROD_DB_HOST,
   // port: process.env.PROD_DB_PROD_DB_PORT,
@@ -25,10 +25,10 @@ const pool = new Pool({
   // user: process.env.PROD_DB_USERNAME,
   // password: process.env.PROD_DB_PASSWORD,
 
-  // connectionString: process.env.PROD_DB_DATABASE_URL,
-  // ssl: {
-  //   rejectUnauthorized: false,
-  // },
+  connectionString: process.env.PROD_DB_DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 console.log("-----------PROBLEM just under------------");
 
