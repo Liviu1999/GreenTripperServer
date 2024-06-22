@@ -19,16 +19,16 @@ const pool = new Pool({
   // password: "root",
   // port: 5433,
 
-  // host: process.env.PROD_DB_HOST,
-  // port: process.env.PROD_DB_PROD_DB_PORT,
-  // database: process.env.PROD_DB_DARABASE_URL,
-  // user: process.env.PROD_DB_USERNAME,
-  // password: process.env.PROD_DB_PASSWORD,
+  host: process.env.PROD_DB_HOST,
+  port: process.env.PROD_DB_PROD_DB_PORT,
+  database: process.env.PROD_DB_DARABASE_URL,
+  user: process.env.PROD_DB_USERNAME,
+  password: process.env.PROD_DB_PASSWORD,
 
-  connectionString: process.env.PROD_DB_DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // connectionString: process.env.PROD_DB_DATABASE_URL,
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
 });
 console.log("-----------PROBLEM just under------------");
 
