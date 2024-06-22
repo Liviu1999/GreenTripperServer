@@ -51,6 +51,16 @@ server.get("/", (req, res) => {
   res.send({ name: "utu" });
 });
 
+server.get("/users", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM users");
+    return res.send(result.rows);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ error: "Error fetching users" });
+  }
+});
+
 server.post("/api/register", async (req, res) => {
   const { email, username, password } = req.body;
 
@@ -131,16 +141,6 @@ server.use(async (req, res, next) => {
   }
 
   return res.status(403).send("Invalid token");
-});
-
-server.get("/users", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM users");
-    return res.send(result.rows);
-  } catch (error) {
-    console.log(error);
-    return res.status(500).send({ error: "Error fetching users" });
-  }
 });
 
 const PORT = process.env.PORT || 3000;
