@@ -21,7 +21,7 @@ const pool = new Pool({
 
   host: process.env.PROD_DB_HOST,
   port: process.env.PROD_DB_PROD_DB_PORT,
-  database: process.env.PROD_DB_DARABASE_URL,
+  database: process.env.PROD_DB_DATABASE,
   user: process.env.PROD_DB_USERNAME,
   password: process.env.PROD_DB_PASSWORD,
 
