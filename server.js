@@ -168,7 +168,7 @@ server.use(async (req, res, next) => {
   return res.status(403).send("Invalid token");
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = 5432 || 3000;
 
 server.listen(PORT, () =>
   console.log(`Server is now running in PORT: ${PORT}`)
