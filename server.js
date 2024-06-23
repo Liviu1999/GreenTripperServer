@@ -124,7 +124,7 @@ server.post("/api/login", async (req, res) => {
 
   try {
     const token = await sign(
-      { id: result.id, nickname: result.nickname, email },
+      { id: result.user_id, username: result.username, email },
       process.env.JWT_SECRET,
       {
         algorithm: "HS512",
