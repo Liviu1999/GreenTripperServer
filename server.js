@@ -139,7 +139,12 @@ server.post("/api/login", async (req, res) => {
       }
     );
 
-    return res.send({ token, user_id, username, email });
+    return res.send({
+      token: token,
+      user_id: result.user_id,
+      username: result.username,
+      email: email,
+    });
   } catch (err) {
     console.error("Error generating token:", err.message, err.stack);
     return res.status(500).send({ error: "Cannot generate token" });
