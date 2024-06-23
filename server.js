@@ -122,6 +122,13 @@ server.post("/api/login", async (req, res) => {
     return res.status(403).send({ error: "Wrong password" });
   }
 
+  console.log("JWT_SECRET:", process.env.JWT_SECRET);
+  console.log("User data for token:", {
+    id: result.user_id,
+    username: result.username,
+    email,
+  });
+
   try {
     const token = await sign(
       { id: result.user_id, username: result.username, email },
@@ -134,7 +141,7 @@ server.post("/api/login", async (req, res) => {
 
     return res.send({ token });
   } catch (err) {
-    console.log(err);
+    console.error("Error generating token:", err.message, err.stack);
     return res.status(500).send({ error: "Cannot generate token" });
   }
 });
