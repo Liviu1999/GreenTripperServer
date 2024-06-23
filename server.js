@@ -29,7 +29,16 @@ const pool = new Pool({
   // user: process.env.PROD_DB_USERNAME,
   // password: process.env.PROD_DB_PASSWORD,
 
-  connectionString: process.env.PROD_DB_DATABASE_URL,
+  // connectionString: process.env.PROD_DB_DATABASE_URL,
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
+
+  host: "ccaml3dimis7eh.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
+  port: 5432,
+  database: "dteaspvf3965d",
+  user: "ucagh3m0qau2d8",
+  password: "pd3266c0fff9899e737e642ea55a7bfa60aefe9f92ae99a7e3fdc75397a9b1b0a",
   ssl: {
     rejectUnauthorized: false,
   },
