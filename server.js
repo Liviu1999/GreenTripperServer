@@ -12,6 +12,10 @@ const { Pool } = pg;
 // Loading variables from the .env file
 dotenv.config();
 
+console.log("Database connection details:", {
+  connectionString: process.env.PROD_DB_DATABASE_URL,
+});
+
 const pool = new Pool({
   // user: "uacfd6574l35oo",
   // host: "c9tiftt16dc3eo.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
@@ -82,7 +86,7 @@ server.post("/api/register", async (req, res) => {
 
     return res.send({ info: "User succesfully created" });
   } catch (err) {
-    console.log(err);
+    console.error("Error creating user:", err.message, err.stack);
     return res.status(500).send({ error: "Error creating user" });
   }
 });
